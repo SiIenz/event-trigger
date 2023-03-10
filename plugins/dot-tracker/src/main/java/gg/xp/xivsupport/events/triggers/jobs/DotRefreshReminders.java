@@ -198,8 +198,11 @@ public class DotRefreshReminders {
 			}
 			else {
 				if (!suppressSpamCallouts || Duration.between(lastCallout, now).toMillis() > 500) {
+					/*
 					String name = originalEvent.getBuff().getName();
 					String adjustedName = adjustDotName(name);
+					*/
+					String adjustedName = "Dot Refresh";
 					context.accept(new BasicCalloutEvent(adjustedName, enableFlyingText.get() ? adjustedName : null));
 				}
 				lastCallout = now;
